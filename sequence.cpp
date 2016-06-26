@@ -2,9 +2,9 @@
 
 int main()
 {
-	test_input();
+	test_iterator();
 	test_null();
-	test_scan();
+//	test_scan();
 
 	return 0;
 }

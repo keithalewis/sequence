@@ -148,7 +148,7 @@
   <ItemGroup>
     <ClInclude Include="null.h" />
     <ClInclude Include="scan.h" />
-    <ClInclude Include="input.h" />
+    <ClInclude Include="iterator.h" />
     <ClInclude Include="sequence.h" />
     <ClInclude Include="skip.h" />
   </ItemGroup>

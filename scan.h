@@ -67,7 +67,7 @@ namespace sequence {
 inline void test_scan()
 {
 	int i[] = {1,2,3};
-	auto s = sequence::sum(sequence::make_input(i));
+	auto s = sequence::sum(sequence::make_iterator(i));
 	auto s2(s);
 	s = s2;
 	assert (s == s2);

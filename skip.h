@@ -21,7 +21,7 @@ namespace sequence {
 inline void test_skip()
 {
 	int i[] = {1,2,3};
-	auto s = sequence::make_input(i);
+	auto s = sequence::make_iterator(i);
 	s = skip(0,s);
 	assert (*s == 1);
 	s = skip(1,s);

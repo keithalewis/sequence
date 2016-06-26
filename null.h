@@ -1,13 +1,16 @@
 // null.h - null terminated sequence
 #pragma once
+#include "sequence.h"
 
 namespace sequence {
 
 	template<class I>
-	struct null : public input<I>
+	struct null : public iterator<I>
 	{
+		using iterator<I>::i;
+
 		null(I i)
-		: input(i)
+		: iterator<I>(i)
 		{ }
 
 		bool operator_bool() const override
@@ -29,7 +32,7 @@ namespace sequence {
 
 inline void test_null()
 {
-	char* abc = "abc";
+	const char* abc = "abc";
 	auto s = sequence::make_null(abc); 
 	auto s2(s);
 	s = s2;

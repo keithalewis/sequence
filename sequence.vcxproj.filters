@@ -24,10 +24,10 @@
     <ClInclude Include="null.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="input.h">
+    <ClInclude Include="sequence.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="sequence.h">
+    <ClInclude Include="iterator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
