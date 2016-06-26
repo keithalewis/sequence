@@ -4,7 +4,7 @@
 
 namespace sequence {
 
-	template<class S, typename N = std::iterator_traits<S>::difference_type>
+	template<class S, typename N = typename std::iterator_traits<S>::difference_type>
 	inline auto skip(N n, S s)
 	{
 		std::advance(s, n);

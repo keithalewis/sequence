@@ -1,12 +1,11 @@
 // scan.h - accumulate a sequence using a binary operator
 #pragma once
 #include <functional>
-#include "sequence.h"
 
 namespace sequence {
 
 	// op(t + *s), op(t + *s + *++s), ...
-	template<class Op, class S, class T = std::iterator_traits<S>::value_type>
+	template<class Op, class S, class T = typename std::iterator_traits<S>::value_type>
 	class scan : public S
 	{
 		static T op(const T& u, const T& v)
@@ -30,7 +29,7 @@ namespace sequence {
 			return !operator==(s);
 		}
 
-		T operator*() const
+		const T& operator*() const
 		{
 			return t;
 		}
@@ -49,12 +48,12 @@ namespace sequence {
 			return s;
 		}
 	};
-	template<class Op, class S, class T = std::iterator_traits<S>::value_type>
+	template<class Op, class S, class T = typename std::iterator_traits<S>::value_type>
 	inline auto make_scan(S s, T t)
 	{
 		return scan<Op,S,T>(s, t);
 	}
-	template<class S, class T = std::iterator_traits<S>::value_type>
+	template<class S, class T = typename std::iterator_traits<S>::value_type>
 	inline auto sum(S s, T t = 0)
 	{
 		return make_scan<std::plus<T>,S,T>(s, t);
@@ -63,6 +62,7 @@ namespace sequence {
 
 #ifdef _DEBUG
 #include <cassert>
+#include "sequence.h"
 
 inline void test_scan()
 {
@@ -80,3 +80,4 @@ inline void test_scan()
 }
 
 #endif // _DEBUG
+

@@ -17,8 +17,6 @@ namespace sequence {
 	{
 	protected:
 		I i;
-		// polymorphic delete not allowed
-		// ~iterator() {}
 	public:
 		iterator(I i)
 			: i(i)
@@ -40,13 +38,10 @@ namespace sequence {
 		{
 			return operator_star_const();
 		}
-		/*
-		std::enable_if<std::is_base_of<std::forward_iterator_tag,C>::value,R>
-		operator*()
+		R operator*()
 		{
 			return operator_star();
 		}
-		*/
 		iterator& operator++()
 		{
 			return operator_plus();
@@ -55,7 +50,16 @@ namespace sequence {
 		{
 			return operator_plus_int();
 		}
+		iterator operator--()
+		{
+			return operator_minus();
+		}
+		iterator operator--(int)
+		{
+			return operator_minus_int();
+		}
 	private:
+		// unsafe
 		virtual bool operator_bool() const
 		{
 			return true;
@@ -82,37 +86,100 @@ namespace sequence {
 		{
 			return iterator(operator_plus());
 		}
+		iterator& operator_minus()
+		{
+			--i;
+
+			return *this;
+		}
+		iterator& operator_minus_int()
+		{
+			return iterator(operator_minus());
+		}
 	};
 	
-	template<class I>
+	template<class I, 
+		class C = typename std::iterator_traits<I>::iterator_category,
+		class T = typename std::iterator_traits<I>::value_type,
+		class D = typename std::iterator_traits<I>::difference_type,
+		class P = typename std::iterator_traits<I>::pointer,
+		class R = typename std::iterator_traits<I>::reference
+	>
 	inline auto make_iterator(I i)
 	{
-		return iterator<I>(i);
+		return iterator<I,C,T,D,P,R>(i);
 	}
 }
 
 #ifdef _DEBUG
 #include <cassert>
+#include <vector>
 
 inline void test_iterator()
 {
-	int i[] = {1,2,3};
-	auto s = sequence::make_iterator(i);
-	auto s2(s);
-	s = s2;
-	assert (s == s2);
-	assert (!(s != s2));
+	{
+		int i[] = {1,2,3};
+		auto s = sequence::make_iterator(i);
+		auto s2(s);
+		s = s2;
+		assert (s == s2);
+		assert (!(s != s2));
 
-	assert (s == s2);
-	assert (!(s != s2));
+		assert (s == s2);
+		assert (!(s != s2));
 	
-	assert (s);
-	assert (s2);
-	assert (*s == 1);
-	assert (*++s == 2);
-	s++;
-	assert (*s == 3);
-	assert (++s); // always true
+		assert (s);
+		assert (s2);
+		assert (*s == 1);
+		*s = 4;
+		assert (*s == 4);
+		assert (*++s == 2);
+		s++;
+		assert (*s == 3);
+		assert (++s); // always true
+	}
+	{
+		const int i[] = {1,2,3};
+		auto s = sequence::make_iterator(i);
+		auto s2(s);
+		s = s2;
+		assert (s == s2);
+		assert (!(s != s2));
+
+		assert (s == s2);
+		assert (!(s != s2));
+
+		assert (s);
+		assert (s2);
+		assert (*s == 1);
+		// *s = 4; // compile time failure
+		// assert (*s == 4);
+		assert (*++s == 2);
+		s++;
+		assert (*s == 3);
+		assert (++s); // always true
+	}
+	{
+		std::vector<int> i = {1,2,3};
+		auto s = sequence::make_iterator(std::begin(i));
+		auto s2(s);
+		s = s2;
+		assert (s == s2);
+		assert (!(s != s2));
+
+		assert (s == s2);
+		assert (!(s != s2));
+
+		assert (s);
+		assert (s2);
+		assert (*s == 1);
+		*s = 4;
+		assert (*s == 4);
+		assert (*++s == 2);
+		s++;
+		assert (*s == 3);
+		assert (++s); // always true
+	}
 }
 
 #endif // _DEBUG
