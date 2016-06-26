@@ -2,7 +2,7 @@
 #pragma once
 #include "sequence.h"
 
-namespace seq {
+namespace sequence {
 
 	template<class S, typename N = std::iterator_traits<S>::difference_type>
 	inline auto skip(N n, S s)
@@ -21,7 +21,7 @@ namespace seq {
 inline void test_skip()
 {
 	int i[] = {1,2,3};
-	auto s = seq::make_sequence(i);
+	auto s = sequence::make_input(i);
 	s = skip(0,s);
 	assert (*s == 1);
 	s = skip(1,s);

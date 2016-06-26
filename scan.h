@@ -3,8 +3,9 @@
 #include <functional>
 #include "sequence.h"
 
-namespace seq {
+namespace sequence {
 
+	// op(t + *s), op(t + *s + *++s), ...
 	template<class Op, class S, class T = std::iterator_traits<S>::value_type>
 	class scan : public S
 	{
@@ -66,7 +67,7 @@ namespace seq {
 inline void test_scan()
 {
 	int i[] = {1,2,3};
-	auto s = seq::sum(seq::make_sequence(i));
+	auto s = sequence::sum(sequence::make_input(i));
 	auto s2(s);
 	s = s2;
 	assert (s == s2);

@@ -1,25 +1,25 @@
-// null_sequence.h - null terminated sequence
+// null.h - null terminated sequence
 #pragma once
 
-namespace seq {
+namespace sequence {
 
 	template<class I>
-	struct null_sequence : public sequence<I>
+	struct null : public input<I>
 	{
-		null_sequence(I i)
-		: sequence(i)
+		null(I i)
+		: input(i)
 		{ }
 
-		bool operator_bool() const
+		bool operator_bool() const override
 		{
 			return *i != 0;
 		}
 	};
 
 	template<class I>
-	inline auto make_null_sequence(I i)
+	inline auto make_null(I i)
 	{
-		return null_sequence<I>(i);
+		return null<I>(i);
 	}
 
 }
@@ -27,14 +27,16 @@ namespace seq {
 #ifdef _DEBUG
 #include <cassert>
 
-inline void test_null_sequence()
+inline void test_null()
 {
 	char* abc = "abc";
-	auto s = seq::make_null_sequence(abc); 
+	auto s = sequence::make_null(abc); 
 	auto s2(s);
 	s = s2;
+
 	assert (s == s2);
 	assert (!(s != s2));
+
 	assert (s);
 	assert (!!s);		
 	assert (*s == 'a');

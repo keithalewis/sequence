@@ -146,8 +146,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="null_sequence.h" />
+    <ClInclude Include="null.h" />
     <ClInclude Include="scan.h" />
+    <ClInclude Include="input.h" />
     <ClInclude Include="sequence.h" />
     <ClInclude Include="skip.h" />
   </ItemGroup>

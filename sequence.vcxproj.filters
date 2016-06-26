@@ -15,16 +15,19 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="sequence.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="skip.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="scan.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="null_sequence.h">
+    <ClInclude Include="null.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="input.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sequence.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
