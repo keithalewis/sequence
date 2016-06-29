@@ -34,29 +34,43 @@ namespace sequence {
 		{
 			return !operator_equal(s);
 		}
-		const R operator*() const
-		{
-			return operator_star_const();
-		}
 		R operator*()
 		{
 			return operator_star();
 		}
+		const R operator*() const
+		{
+			return operator_star_const();
+		}
 		iterator& operator++()
 		{
-			return operator_plus();
+			return operator_plus_plus();
 		}
 		iterator operator++(int)
 		{
-			return operator_plus_int();
+			return operator_plus_plus_int();
 		}
-		iterator operator--()
+		iterator& operator--()
 		{
-			return operator_minus();
+			return operator_minus_minus();
 		}
 		iterator operator--(int)
 		{
-			return operator_minus_int();
+			return operator_minus_minus_int();
+		}
+		iterator& operator+=(D n)
+		{
+			return operator_plus_equal(n);
+		}
+		iterator& operator-=(D n)
+		{
+			return operator_minus_equal(n);
+		}
+		std::enable_if<
+			std::is_same<C,std::random_access_iterator_tag>::value,D>
+		operator-(const iterator& s) const
+		{
+			return operator_minus(s);
 		}
 	private:
 		// unsafe
@@ -68,33 +82,49 @@ namespace sequence {
 		{
 			return i == s.i;
 		}
-		virtual const R operator_star_const() const
-		{
-			return *i;
-		}
 		virtual R operator_star()
 		{
 			return *i;
 		}
-		iterator& operator_plus()
+		virtual const R operator_star_const() const
+		{
+			return *i;
+		}
+		virtual iterator& operator_plus_plus()
 		{
 			++i;
 
 			return *this;
 		}
-		iterator operator_plus_int()
+		virtual iterator operator_plus_plus_int()
 		{
-			return iterator(operator_plus());
+			return iterator(operator_plus_plus());
 		}
-		iterator& operator_minus()
+		virtual iterator& operator_minus_minus()
 		{
 			--i;
 
 			return *this;
 		}
-		iterator& operator_minus_int()
+		virtual iterator operator_minus_minus_int()
 		{
-			return iterator(operator_minus());
+			return iterator(operator_minus_minus());
+		}
+		virtual iterator& operator_plus_equal(D n)
+		{
+			i += n;
+
+			return *this;
+		}
+		virtual iterator& operator_minus_equal(D n)
+		{
+			i -= n;
+
+			return *this;
+		}
+		virtual D operator_minus(const iterator& s) const
+		{
+			return i - s.i;
 		}
 	};
 	
@@ -114,6 +144,7 @@ namespace sequence {
 #ifdef _DEBUG
 #include <cassert>
 #include <vector>
+#include <list>
 
 inline void test_iterator()
 {
@@ -133,10 +164,20 @@ inline void test_iterator()
 		assert (*s == 1);
 		*s = 4;
 		assert (*s == 4);
+		*s = 1;
 		assert (*++s == 2);
 		s++;
 		assert (*s == 3);
 		assert (++s); // always true
+
+		s = sequence::make_iterator(i);
+		++s; 
+		--s;
+		assert (*s == 1);
+		s += 2;
+		assert (*s == 3);
+		s -= 2;
+		assert (*s == 1);
 	}
 	{
 		const int i[] = {1,2,3};
@@ -158,6 +199,16 @@ inline void test_iterator()
 		s++;
 		assert (*s == 3);
 		assert (++s); // always true
+
+		s = sequence::make_iterator(i);
+		++s; 
+		--s;
+		assert (*s == 1);
+		s += 2;
+		assert (*s == 3);
+		s -= 2;
+		assert (*s == 1);
+		assert (s - s == 0);
 	}
 	{
 		std::vector<int> i = {1,2,3};
@@ -175,10 +226,53 @@ inline void test_iterator()
 		assert (*s == 1);
 		*s = 4;
 		assert (*s == 4);
+		*s = 1;
 		assert (*++s == 2);
 		s++;
 		assert (*s == 3);
 		assert (++s); // always true
+		s = sequence::make_iterator(i.begin());
+
+		++s; 
+		--s;
+		assert (*s == 1);
+		s += 2;
+		assert (*s == 3);
+		s -= 2;
+		assert (*s == 1);
+	}
+	{
+		std::list<int> i = {1,2,3};
+		auto s = sequence::make_iterator(std::begin(i));
+		auto s2(s);
+		s = s2;
+		assert (s == s2);
+		assert (!(s != s2));
+
+		assert (s == s2);
+		assert (!(s != s2));
+
+		assert (s);
+		assert (s2);
+		assert (*s == 1);
+		*s = 4;
+		assert (*s == 4);
+		*s = 1;
+		assert (*++s == 2);
+		s++;
+		assert (*s == 3);
+		assert (++s); // always true
+/*
+		s = sequence::make_iterator(i.begin());
+
+		++s; 
+		--s;
+		assert (*s == 1);
+		s += 2;
+		assert (*s == 3);
+		s -= 2;
+		assert (*s == 1);
+*/
 	}
 }
 

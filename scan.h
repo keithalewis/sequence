@@ -1,12 +1,13 @@
 // scan.h - accumulate a sequence using a binary operator
 #pragma once
 #include <functional>
+#include "iterator.h"
 
 namespace sequence {
 
 	// op(t + *s), op(t + *s + *++s), ...
 	template<class Op, class S, class T = typename std::iterator_traits<S>::value_type>
-	class scan : public S
+	class scan : public sequence::iterator<S,std::input_iterator_tag>
 	{
 		static T op(const T& u, const T& v)
 		{
