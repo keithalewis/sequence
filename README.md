@@ -16,9 +16,9 @@ There is a simpler and more elegant approach.
 The class `sequence::iterator<I>` should publicly inherit
 from `I` and implement `operator bool() const`, but it doesn't.
 
-It has a copy of the iterator and implements all of the appropriate member
-functions library writers have to fuss over based on what the
-iterator category requries and uses the NVI idiom.
+Instead it inherits from `std::iterator` using the `std::iterator_traits` from `I`
+and has a copy of the iterator. The class implements all of the appropriate member
+functions based on what the iterator category requries and uses the NVI idiom.
 
 The public non-virtual functions call private virtual functions
 that forward to the iterator and return `true` for every invocation of 
