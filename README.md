@@ -2,7 +2,7 @@
 
 The Achilles' heel of the [Range v3](https://github.com/ericniebler/range-v3)
 proposal is that not only does it require you to drag around two iterators, as in
-STL algorithms, they can now be of two different types. This paints one into the corner of
+STL algorithms, they can now be of two different types! This paints one into the corner of
 requiring many algorithms to take an extra predicate argument.
 
 There is a simpler and more elegant approach.
@@ -13,7 +13,7 @@ indicating when it can be dereferenced.
 One thing is simpler than two things and adding arguments
 to functions thwarts composition.
 
-Earlier implmentations had the class `sequence::iterator<I>` publicly inherit
+Earlier implementations had the class `sequence::iterator<I>` publicly inherit
 from `I` but the current implmentation inherits from `std::iterator` using the `std::iterator_traits` 
 from `I` and holds a copy of the iterator. This makes the class self-contained and sequences
 of type `T*` are no longer a special case. 
@@ -22,7 +22,6 @@ They are merely as compact, fast, and dangerous as naked pointers.
 The `sequence::iterator` class implements all of the appropriate member
 functions based on what the iterator category requries and uses the 
 [NVI](https://en.wikibooks.org/wiki/More_C%2B%2B_Idioms/Non-Virtual_Interface) idiom.
-
 The public non-virtual functions call private virtual functions.
 Derived classes override these functions and optimizing compilers turn the
 virtual function calls into direct calls.
