@@ -8,7 +8,9 @@ requiring many algorithms to take an extra predicate argument.
 There is a simpler and more elegant approach.
 
 A _sequence_ is an iterator having `operator bool() const`
-indicating when it can be dereferenced.
+indicating when it can be dereferenced. This is not a new approach.
+C# enumerators have this and Linq illustrates how to provide powerful
+programming abstractions that seem to be little known in the C++ community.
 
 One thing is simpler than two things and adding arguments
 to functions thwarts composition.
@@ -17,7 +19,15 @@ Earlier implementations had the class `sequence::iterator<I>` publicly inherit
 from `I` but the current implmentation inherits from `std::iterator` using the `std::iterator_traits` 
 from `I` and holds a copy of the iterator. This makes the class self-contained and sequences
 of type `T*` are no longer a special case. 
-They are merely as compact, fast, and dangerous as naked pointers. 
+They are merely as compact, fast, and dangerous as naked pointers.
+
+A primary design goal of the library is to keep sequences lightweight. Users
+should not be concerned about making a copy. It is just a pointer and maybe
+a counter if the length is known. A secondary design goal is to break free
+from the STL notion of an interval. Sequences are more flexible when it
+comes to traversing higher dimensional data structure. 
+
+Google `SelectMany`.
 
 The `sequence::iterator` class implements all of the appropriate member
 functions based on what the iterator category requries and uses the 
