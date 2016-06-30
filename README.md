@@ -25,7 +25,7 @@ A primary design goal of the library is to keep sequences lightweight. Users
 should not be concerned about making a copy. It is just a pointer and maybe
 a counter if the length is known. A secondary design goal is to break free
 from the STL notion of an interval. Sequences are more flexible when it
-comes to traversing higher dimensional data structure. 
+comes to traversing higher dimensional data structures. 
 
 Google `SelectMany`.
 
