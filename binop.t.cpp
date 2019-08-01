@@ -5,6 +5,7 @@
 #include "epsilon.h"
 #include "factorial.h"
 #include "fold.h"
+#include "length.h"
 #include "power.h"
 
 using namespace fms::sequence;
@@ -20,10 +21,12 @@ int test_binop()
     assert(*n2 == 4);
     {
         double x = 1;
-        auto e = sum(epsilon(power(x) / factorial()));
+        auto s = epsilon(power(x) / factorial());
+        auto e = sum(s);
+        size_t n = length(s);
         double ex = exp(x);
         double delta = e - ex;
-        delta /= 2;
+        assert(delta == 2 * std::numeric_limits<double>::epsilon());
     }
 
     return 0;

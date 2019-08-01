@@ -151,25 +151,32 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="binop.h" />
+    <ClInclude Include="concatenate.h" />
+    <ClInclude Include="constant.h" />
     <ClInclude Include="counted.h" />
     <ClInclude Include="epsilon.h" />
     <ClInclude Include="factorial.h" />
+    <ClInclude Include="length.h" />
     <ClInclude Include="null.h" />
     <ClInclude Include="fold.h" />
     <ClInclude Include="power.h" />
+    <ClInclude Include="scan.h" />
     <ClInclude Include="sequence.h" />
-    <ClInclude Include="skip.h" />
+    <ClInclude Include="drop.h" />
+    <ClInclude Include="take.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="binop.t.cpp" />
+    <ClCompile Include="concatenate.t.cpp" />
     <ClCompile Include="counted.t.cpp" />
     <ClCompile Include="factorial.t.cpp" />
     <ClCompile Include="fold.t.cpp" />
     <ClCompile Include="null.t.cpp" />
     <ClCompile Include="power.t.cpp" />
+    <ClCompile Include="scan.t.cpp" />
     <ClCompile Include="sequence.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

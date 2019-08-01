@@ -1,6 +1,7 @@
 // binop.h - binary operators on sequences
 #pragma once
 #include <compare>
+#include <functional>
 
 namespace fms::sequence {
 
