@@ -1,45 +1,9 @@
 // sequence.h - iterators with operator bool() const
 #pragma once
+#include <compare>
 #include <functional>
-#include <iterator>
 
-namespace sequence {
-
-	template<class I>
-	using iterator = std::iterator<
-						typename std::iterator_traits<I>::iterator_category,
-						typename std::iterator_traits<I>::value_type,
-						typename std::iterator_traits<I>::difference_type,
-						typename std::iterator_traits<I>::pointer,
-						typename std::iterator_traits<I>::reference
-	                 >;
-
-	// null terminated sequence
-	template<class I>
-	class null : public iterator<I> {
-//		using T = typename std::iterator_traits<I>::value_type;
-		I i;
-	public:
-//		typedef typename T value_type;
-		null(I i)
-			: i(i)
-		{ }
-		operator bool() const
-		{
-			return *i != 0;
-		}
-		null& operator++()
-		{
-			operator bool() && ++i;
-
-			return *this;
-		}
-		value_type operator*() const
-		{
-			return *i;
-		}
-	};
-
+#if 0
 	// machine epsilon terminated sequence
 	template<class I>
 	class epsilon : public iterator<I> {
@@ -219,3 +183,4 @@ inline auto add(I i, J j)
 
 	return sequence::bin_op<std::plus<T>,I,J>(std::plus<T>(), i, j);
 }
+#endif

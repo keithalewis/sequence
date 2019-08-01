@@ -18,25 +18,55 @@
     <ClInclude Include="skip.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="scan.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="null.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="sequence.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="iterator.h">
+    <ClInclude Include="fold.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="counted.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="power.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="factorial.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="binop.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="epsilon.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="sequence.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="README.md" />
+    <ClCompile Include="null.t.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="fold.t.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="counted.t.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="power.t.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="factorial.t.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="binop.t.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

@@ -1,32 +1,36 @@
-// null.h - null terminated sequence
+// counted.h - counted sequence
 #pragma once
 #include <compare>
 
 namespace fms::sequence {
 
     template<class I>
-    class null {
+    class counted {
         I i;
+        size_t n;
     public:
-        null(I i)
-            : i(i)
+        counted(I i, size_t n = 0)
+            : i(i), n(n)
         { }
-        const auto operator<=>(const null&) const = default;
+        const auto operator<=>(const counted&) const = default;
         operator bool() const
         {
-            return *i != 0;
+            return n != 0;
         }
         const auto& operator*() const
         {
             return *i;
         }
-        null& operator++()
+        counted& operator++()
         {
-            if (operator bool())
+            if (operator bool()) {
                 ++i;
+                --n;
+            }
 
             return *this;
         }
+
     };
 
 }
