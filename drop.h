@@ -1,5 +1,7 @@
 // drop.h - drop items from a sequence
 #pragma once
+#include "array.h"
+#include "counted.h"
 
 namespace fms::sequence {
 

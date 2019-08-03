@@ -1,5 +1,6 @@
 // length.h - length of a sequence
 #pragma once
+#include "counted.h"
 
 namespace fms::sequence {
 
@@ -12,6 +13,11 @@ namespace fms::sequence {
             ++n;
 
         return n;
+    }
+    template<class I>
+    inline size_t length(counted<I> i)
+    {
+        return i.size();
     }
 
 }

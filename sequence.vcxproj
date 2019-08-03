@@ -150,16 +150,21 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="array.h" />
     <ClInclude Include="binop.h" />
     <ClInclude Include="concatenate.h" />
     <ClInclude Include="constant.h" />
     <ClInclude Include="counted.h" />
     <ClInclude Include="epsilon.h" />
     <ClInclude Include="factorial.h" />
+    <ClInclude Include="flatten.h" />
+    <ClInclude Include="fmap.h" />
     <ClInclude Include="length.h" />
     <ClInclude Include="null.h" />
     <ClInclude Include="fold.h" />
+    <ClInclude Include="pointer.h" />
     <ClInclude Include="power.h" />
+    <ClInclude Include="reverse.h" />
     <ClInclude Include="scan.h" />
     <ClInclude Include="sequence.h" />
     <ClInclude Include="drop.h" />
@@ -169,13 +174,17 @@
     <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="array.t.cpp" />
     <ClCompile Include="binop.t.cpp" />
     <ClCompile Include="concatenate.t.cpp" />
     <ClCompile Include="counted.t.cpp" />
     <ClCompile Include="factorial.t.cpp" />
+    <ClCompile Include="fmap.t.cpp" />
     <ClCompile Include="fold.t.cpp" />
     <ClCompile Include="null.t.cpp" />
+    <ClCompile Include="pointer.t.cpp" />
     <ClCompile Include="power.t.cpp" />
+    <ClCompile Include="reverse.t.cpp" />
     <ClCompile Include="scan.t.cpp" />
     <ClCompile Include="sequence.cpp" />
   </ItemGroup>

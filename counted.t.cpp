@@ -10,6 +10,7 @@ int test_counted()
 
     {
         auto ci = counted(i, 3);
+        assert(ci.size() == 3);
         auto ci2{ ci };
         assert(ci2 == ci);
         ci = ci2;

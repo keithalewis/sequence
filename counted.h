@@ -12,12 +12,16 @@ namespace fms::sequence {
         counted(I i, size_t n = 0)
             : i(i), n(n)
         { }
+        size_t size() const
+        {
+            return n;
+        }
         const auto operator<=>(const counted&) const = default;
         operator bool() const
         {
             return n != 0;
         }
-        const auto& operator*() const
+        auto operator*() const
         {
             return *i;
         }

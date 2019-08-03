@@ -17,7 +17,7 @@ namespace fms::sequence {
         {
             return i || j;
         }
-        const auto& operator*() const
+        auto operator*() const
         {
             return i ? *i : *j;
         }
