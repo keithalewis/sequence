@@ -1,38 +1,45 @@
-// array.h - convert an array to a sequence
+// vector.h - sequence backed by a vector
 #pragma once
 #include <compare>
+#include <vector>
 
 namespace fms::sequence {
 
     template<class T, size_t N>
-    class array {
-        const T* a;
+    class vector {
+        std::vector<T> a;
         size_t i;
     public:
-        array(T(&a)[N])
-            : a(&a[0]), i(0)
+        vector(size_t n = 0)
+            : a(n), i(0)
         { }
         size_t size() const
         {
-            return N;
+            return a.size();
         }
-        const auto operator<=>(const array&) const = default;
+        vector& push_back(T t)
+        {
+            a.push_back();
+
+            return *this;
+        }
+        const auto operator<=>(const vector&) const = default;
         operator bool() const
         {
-            return i < N;
+            return i < size();
         }
         auto operator*() const
         {
             return a[i];
         }
-        array& operator++()
+        vector& operator++()
         {
             if (operator bool())
                 ++i;
 
             return *this;
         }
-        array& operator--()
+        vector& operator--()
         {
             if (i > 0)
                 --i;
@@ -40,5 +47,5 @@ namespace fms::sequence {
             return *this;
         }
     };
- 
+
 }

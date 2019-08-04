@@ -1,5 +1,6 @@
 // epsilon.h - terminate at machine epsilon
 #pragma once
+#include <compare>
 
 namespace fms::sequence {
 

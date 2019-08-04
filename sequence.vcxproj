@@ -151,6 +151,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="array.h" />
+    <ClInclude Include="back.h" />
     <ClInclude Include="binop.h" />
     <ClInclude Include="concatenate.h" />
     <ClInclude Include="constant.h" />
@@ -168,7 +169,9 @@
     <ClInclude Include="scan.h" />
     <ClInclude Include="sequence.h" />
     <ClInclude Include="drop.h" />
+    <ClInclude Include="singleton.h" />
     <ClInclude Include="take.h" />
+    <ClInclude Include="vector.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="README.md" />
@@ -187,6 +190,7 @@
     <ClCompile Include="reverse.t.cpp" />
     <ClCompile Include="scan.t.cpp" />
     <ClCompile Include="sequence.cpp" />
+    <ClCompile Include="singleton.t.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

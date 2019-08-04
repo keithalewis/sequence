@@ -30,6 +30,7 @@ namespace fms::sequence {
     inline auto sum(I i)
     {
         using T = decltype(*i);
+
         return foldr(std::plus<T>{}, i, T(0));
     }
 
@@ -37,6 +38,7 @@ namespace fms::sequence {
     inline auto product(I i)
     {
         using T = decltype(*i);
+
         return foldr(std::multiplies<T>{}, i, T(1));
     }
 
