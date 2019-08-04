@@ -84,6 +84,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="README.md" />
+    <None Include="NOTES.md" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="sequence.cpp">
