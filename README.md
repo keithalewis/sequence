@@ -2,7 +2,7 @@
 
 The Achilles' heel of the [Range v3](https://github.com/ericniebler/range-v3)
 proposal is that not only does it require you to drag around two iterators, as in
-STL algorithms, they can now be of two different types! This paints one into the corner of
+STL algorithms, but they can now be of two different types! This paints one into the corner of
 requiring many algorithms to take an extra predicate argument.
 
 There is a simpler and more elegant approach.
