@@ -30,10 +30,3 @@ that terminates when the value is less than machine epsilon.
 
 For example, we can compute `exp(x) = sum_{n>=0} x^n/n!` by `sum(epsilon(power(x)/factorial()))` 
 
-## NOTES
-
-If `s` is a sequence and `!s` then `!++s`, i.,e., incrementing a sequence that is
-done behaves like a noop.
-
-We need to `enable_if` the global binary operators to check for approriate members. (Hinnant's trick)
-
