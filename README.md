@@ -24,9 +24,13 @@ from the STL notion of an interval. Sequences are more flexible when it
 comes to traversing higher dimensional data structures. 
 
 A canonical example of a sequence is a null terminated string. In this case
-`operator bool() const` returns the value of dereferencing the character
-pointer. A more interesting example is a sequence of floating point numbers
+`operator bool() const` returns false when it reaches the null character. 
+A more interesting example is a sequence of floating point numbers
 that terminates when the value is less than machine epsilon.
 
 For example, we can compute `exp(x) = sum_{n>=0} x^n/n!` by `sum(epsilon(power(x)/factorial()))` 
 
+An interesting project would be how to make this more efficient. If `x = 1` this requires 18 term
+and is accurate to 4 times machine epsilon.
+Multiplying by 2^n for any n is very efficient. Since `exp(x) = exp(x/2^n)^(2^n)` the question
+is the tradeoff between speed and accuracy for different values of `n`.
