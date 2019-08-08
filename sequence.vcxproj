@@ -172,7 +172,7 @@
     <ClInclude Include="drop.h" />
     <ClInclude Include="singleton.h" />
     <ClInclude Include="take.h" />
-    <ClInclude Include="vector.h" />
+    <ClInclude Include="tuple.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="NOTES.md" />

@@ -29,6 +29,7 @@ A more interesting example is a sequence of floating point numbers
 that terminates when the value is less than machine epsilon.
 
 For example, we can compute `exp(x) = sum_{n>=0} x^n/n!` by `sum(epsilon(power(x)/factorial()))` 
+An interesting problem would be to find n that makes exp(x/2^n)^(2^n) fastest.
 
 ## NOTES
 
