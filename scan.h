@@ -2,6 +2,7 @@
 #pragma once
 #include <compare>
 #include <functional>
+#include "constant.h"
 
 namespace fms::sequence {
     template<class Op, class I, class T>

@@ -158,6 +158,7 @@
     <ClInclude Include="counted.h" />
     <ClInclude Include="epsilon.h" />
     <ClInclude Include="factorial.h" />
+    <ClInclude Include="filter.h" />
     <ClInclude Include="flatten.h" />
     <ClInclude Include="fmap.h" />
     <ClInclude Include="length.h" />
@@ -182,6 +183,7 @@
     <ClCompile Include="concatenate.t.cpp" />
     <ClCompile Include="counted.t.cpp" />
     <ClCompile Include="factorial.t.cpp" />
+    <ClCompile Include="filter.t.cpp" />
     <ClCompile Include="fmap.t.cpp" />
     <ClCompile Include="fold.t.cpp" />
     <ClCompile Include="null.t.cpp" />

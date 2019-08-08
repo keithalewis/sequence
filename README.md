@@ -37,3 +37,4 @@ done behaves like a noop.
 
 We need to `enable_if` the global binary operators to check for approriate members. (Hinnant's trick)
 
+Can fmap be used for SelectMany?
