@@ -175,6 +175,7 @@
     <ClInclude Include="vector.h" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="NOTES.md" />
     <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>

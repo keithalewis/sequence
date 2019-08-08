@@ -2,7 +2,7 @@
 
 The Achilles' heel of the [Range v3](https://github.com/ericniebler/range-v3)
 proposal is that not only does it require you to drag around two iterators, as in
-STL algorithms, they can now be of two different types! This paints one into the corner of
+STL algorithms, but they can now be of two different types! This paints one into the corner of
 requiring many algorithms to take an extra predicate argument.
 
 There is a simpler and more elegant approach.
@@ -24,8 +24,8 @@ from the STL notion of an interval. Sequences are more flexible when it
 comes to traversing higher dimensional data structures. 
 
 A canonical example of a sequence is a null terminated string. In this case
-`operator bool() const` returns the value of dereferencing the character
-pointer. A more interesting example is a sequence of floating point numbers
+`operator bool() const` returns false when it reaches the null character. 
+A more interesting example is a sequence of floating point numbers
 that terminates when the value is less than machine epsilon.
 
 For example, we can compute `exp(x) = sum_{n>=0} x^n/n!` by `sum(epsilon(power(x)/factorial()))` 
@@ -37,4 +37,3 @@ done behaves like a noop.
 
 We need to `enable_if` the global binary operators to check for approriate members. (Hinnant's trick)
 
-Can fmap be used for SelectMany?
