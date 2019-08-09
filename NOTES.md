@@ -19,7 +19,7 @@ z | y <= z | x <= y <= z | where x^2 + y^2 = z^2
 
 Prime number example.
 
-2, rest not divisible by 2, rest not divisible by first of the rest..
+2, rest not divisible by 2, rest not divisible by first of the rest.
 
 ## References
 
