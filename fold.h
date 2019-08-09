@@ -4,6 +4,7 @@
 
 namespace fms::sequence {
 
+    // fold left
     template<class Op, class I, class T = decltype(I::operator*())>
     inline T foldl(Op op, I i, T i0)
     {
@@ -15,6 +16,7 @@ namespace fms::sequence {
         return i0;
     }
 
+    // fold right
     template<class Op, class I, class T = decltype(I::operator*())>
     inline T foldr(Op op, I i, T i0)
     {
