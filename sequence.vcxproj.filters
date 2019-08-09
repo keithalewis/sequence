@@ -75,10 +75,13 @@
     <ClInclude Include="singleton.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="vector.h">
+    <ClInclude Include="back.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="back.h">
+    <ClInclude Include="filter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="tuple.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -127,6 +130,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="singleton.t.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="filter.t.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
