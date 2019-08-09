@@ -144,5 +144,11 @@
     <ClCompile Include="zip.t.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="drop.t.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="flatten.t.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

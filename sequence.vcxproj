@@ -185,8 +185,10 @@
     <ClCompile Include="binop.t.cpp" />
     <ClCompile Include="concatenate.t.cpp" />
     <ClCompile Include="counted.t.cpp" />
+    <ClCompile Include="drop.t.cpp" />
     <ClCompile Include="factorial.t.cpp" />
     <ClCompile Include="filter.t.cpp" />
+    <ClCompile Include="flatten.t.cpp" />
     <ClCompile Include="fmap.t.cpp" />
     <ClCompile Include="fold.t.cpp" />
     <ClCompile Include="null.t.cpp" />

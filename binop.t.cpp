@@ -21,9 +21,13 @@ int test_binop()
     assert(*n2 == 4);
     {
         double x = 1;
-        auto s = epsilon(power(x) / factorial());
-        auto e = sum(s);
-        size_t n = length(s);
+        // exp(x) = sum_0^infty x^n/n!
+        auto expx = power(x) / factorial();
+        // stop when terms are less than machine epsilon
+        auto e = sum(epsilon(expx));
+        // how many terms are required?
+        size_t n = length(epsilon(expx));
+        assert(n == 18);
         double ex = exp(x);
         double delta = e - ex;
         assert(delta == 2 * std::numeric_limits<double>::epsilon());
