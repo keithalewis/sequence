@@ -154,6 +154,7 @@
     <ClInclude Include="back.h" />
     <ClInclude Include="binop.h" />
     <ClInclude Include="concatenate.h" />
+    <ClInclude Include="cons.h" />
     <ClInclude Include="constant.h" />
     <ClInclude Include="counted.h" />
     <ClInclude Include="epsilon.h" />
@@ -173,6 +174,7 @@
     <ClInclude Include="singleton.h" />
     <ClInclude Include="take.h" />
     <ClInclude Include="tuple.h" />
+    <ClInclude Include="zip.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="NOTES.md" />
@@ -194,6 +196,7 @@
     <ClCompile Include="scan.t.cpp" />
     <ClCompile Include="sequence.cpp" />
     <ClCompile Include="singleton.t.cpp" />
+    <ClCompile Include="zip.t.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

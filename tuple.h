@@ -2,7 +2,7 @@
 #pragma once
 #include <compare>
 #include <initializer_list>
-#include <tuple>
+#include <vector>
 
 namespace fms::sequence {
 

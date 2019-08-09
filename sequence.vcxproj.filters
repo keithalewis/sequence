@@ -84,6 +84,12 @@
     <ClInclude Include="tuple.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="cons.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="zip.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="README.md" />
@@ -133,6 +139,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="filter.t.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="zip.t.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
