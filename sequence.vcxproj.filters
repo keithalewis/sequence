@@ -90,6 +90,15 @@
     <ClInclude Include="zip.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="merge.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cartesian.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="empty.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="README.md" />
@@ -148,6 +157,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="flatten.t.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cartesian.t.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="merge.t.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

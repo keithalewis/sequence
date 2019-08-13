@@ -153,16 +153,19 @@
     <ClInclude Include="array.h" />
     <ClInclude Include="back.h" />
     <ClInclude Include="binop.h" />
+    <ClInclude Include="cartesian.h" />
     <ClInclude Include="concatenate.h" />
     <ClInclude Include="cons.h" />
     <ClInclude Include="constant.h" />
     <ClInclude Include="counted.h" />
+    <ClInclude Include="empty.h" />
     <ClInclude Include="epsilon.h" />
     <ClInclude Include="factorial.h" />
     <ClInclude Include="filter.h" />
     <ClInclude Include="flatten.h" />
     <ClInclude Include="fmap.h" />
     <ClInclude Include="length.h" />
+    <ClInclude Include="merge.h" />
     <ClInclude Include="null.h" />
     <ClInclude Include="fold.h" />
     <ClInclude Include="pointer.h" />
@@ -183,6 +186,7 @@
   <ItemGroup>
     <ClCompile Include="array.t.cpp" />
     <ClCompile Include="binop.t.cpp" />
+    <ClCompile Include="cartesian.t.cpp" />
     <ClCompile Include="concatenate.t.cpp" />
     <ClCompile Include="counted.t.cpp" />
     <ClCompile Include="drop.t.cpp" />
@@ -191,6 +195,7 @@
     <ClCompile Include="flatten.t.cpp" />
     <ClCompile Include="fmap.t.cpp" />
     <ClCompile Include="fold.t.cpp" />
+    <ClCompile Include="merge.t.cpp" />
     <ClCompile Include="null.t.cpp" />
     <ClCompile Include="pointer.t.cpp" />
     <ClCompile Include="power.t.cpp" />

@@ -72,10 +72,13 @@ int test_select_many()
 
 #include "tuple.h"
 
+/*
+select(x,{2..}) <= select(y,{...}) <= select(z,...) | where(x^2 + y^2 = z^2)
+*/
 int test_pythagorean()
 {
-    // {i, i + 1, ..., j - 1}
-    auto interval = [](int i, int j) { return take(j - i, arithmetic(i)); };
+    // {i, i + 1, ..., j}
+    auto interval = [](size_t i, size_t j) { return take(j - i + 1, arithmetic(i)); };
     // {2, 3, 4, ... }
     auto i = arithmetic(2);
     // n -> {{2,n},{3,n},...,{n,n}}
