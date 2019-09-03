@@ -253,3 +253,5 @@ paket-files/
 *.out
 *.exe
 *.swp
+/build
+/out/build/x64-Debug

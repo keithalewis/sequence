@@ -1,5 +1,5 @@
-set(HEADER_LIST "${Sequence_SOURCE_DIR/include/sequence.h")
+set(HEADER_LIST "${sequence_SOURCE_DIR/include/sequence.h}")
 add_library(sequence sequence.cpp ${HEADER_LIST})
 target_include_directories(sequence PUBLIC ../include)
-target_compile_features(modern_library PUBLIC cxx_std_17)
+target_compile_features(sequence PUBLIC cxx_std_20)
 source_group(TREE "${PROJECT_SOURCE_DIR}/include" PREFIX "Header Files" FILES ${HEADER_LIST})

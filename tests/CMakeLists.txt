@@ -1,3 +1,4 @@
+set(HEADER_LIST "${sequence_SOURCE_DIR/include/sequence.h}")
 add_executable(sequence.t 
 	array.t.cpp
 	binop.t.cpp
@@ -20,5 +21,7 @@ add_executable(sequence.t
 	singleton.t.cpp
 	zip.t.cpp
 )
-target_compile_features(sequence.t PRIVATE cxx_std_17)
+target_include_directories(sequence.t PUBLIC ../include)
+target_compile_features(sequence.t PRIVATE cxx_std_20)
+target_link_libraries(sequence.t PRIVATE sequence)
 add_test(NAME sequence_test COMMAND sequence.t)
