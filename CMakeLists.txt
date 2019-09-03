@@ -1,5 +1,8 @@
 cmake_minimum_required(VERSION 3.14)
 
+set(CMAKE_C_COMPILER "clang")
+set(CMAKE_CXX_COMPILER "clang++")
+
 project(sequence VERSION 0.1
                  DESCRIPTION "Iterators with operator bool() const"
 				 LANGUAGES CXX)
