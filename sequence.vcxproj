@@ -71,15 +71,19 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
+    <IncludePath>include;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
+    <IncludePath>include;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
+    <IncludePath>include;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
+    <IncludePath>include;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -150,60 +154,61 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="array.h" />
-    <ClInclude Include="back.h" />
-    <ClInclude Include="binop.h" />
-    <ClInclude Include="cartesian.h" />
-    <ClInclude Include="concatenate.h" />
-    <ClInclude Include="cons.h" />
-    <ClInclude Include="constant.h" />
-    <ClInclude Include="counted.h" />
-    <ClInclude Include="empty.h" />
-    <ClInclude Include="epsilon.h" />
-    <ClInclude Include="factorial.h" />
-    <ClInclude Include="filter.h" />
-    <ClInclude Include="flatten.h" />
-    <ClInclude Include="fmap.h" />
-    <ClInclude Include="length.h" />
-    <ClInclude Include="merge.h" />
-    <ClInclude Include="null.h" />
-    <ClInclude Include="fold.h" />
-    <ClInclude Include="pointer.h" />
-    <ClInclude Include="power.h" />
-    <ClInclude Include="reverse.h" />
-    <ClInclude Include="scan.h" />
-    <ClInclude Include="sequence.h" />
-    <ClInclude Include="drop.h" />
-    <ClInclude Include="singleton.h" />
-    <ClInclude Include="take.h" />
-    <ClInclude Include="tuple.h" />
-    <ClInclude Include="zip.h" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="NOTES.md" />
     <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="array.t.cpp" />
-    <ClCompile Include="binop.t.cpp" />
-    <ClCompile Include="cartesian.t.cpp" />
-    <ClCompile Include="concatenate.t.cpp" />
-    <ClCompile Include="counted.t.cpp" />
-    <ClCompile Include="drop.t.cpp" />
-    <ClCompile Include="factorial.t.cpp" />
-    <ClCompile Include="filter.t.cpp" />
-    <ClCompile Include="flatten.t.cpp" />
-    <ClCompile Include="fmap.t.cpp" />
-    <ClCompile Include="fold.t.cpp" />
-    <ClCompile Include="merge.t.cpp" />
-    <ClCompile Include="null.t.cpp" />
-    <ClCompile Include="pointer.t.cpp" />
-    <ClCompile Include="power.t.cpp" />
-    <ClCompile Include="reverse.t.cpp" />
-    <ClCompile Include="scan.t.cpp" />
-    <ClCompile Include="sequence.cpp" />
-    <ClCompile Include="singleton.t.cpp" />
-    <ClCompile Include="zip.t.cpp" />
+    <ClInclude Include="include\array.h" />
+    <ClInclude Include="include\back.h" />
+    <ClInclude Include="include\binop.h" />
+    <ClInclude Include="include\cartesian.h" />
+    <ClInclude Include="include\concatenate.h" />
+    <ClInclude Include="include\cons.h" />
+    <ClInclude Include="include\constant.h" />
+    <ClInclude Include="include\counted.h" />
+    <ClInclude Include="include\drop.h" />
+    <ClInclude Include="include\empty.h" />
+    <ClInclude Include="include\epsilon.h" />
+    <ClInclude Include="include\factorial.h" />
+    <ClInclude Include="include\filter.h" />
+    <ClInclude Include="include\flatten.h" />
+    <ClInclude Include="include\fmap.h" />
+    <ClInclude Include="include\fold.h" />
+    <ClInclude Include="include\length.h" />
+    <ClInclude Include="include\merge.h" />
+    <ClInclude Include="include\null.h" />
+    <ClInclude Include="include\pointer.h" />
+    <ClInclude Include="include\power.h" />
+    <ClInclude Include="include\reverse.h" />
+    <ClInclude Include="include\scan.h" />
+    <ClInclude Include="include\sequence.h" />
+    <ClInclude Include="include\singleton.h" />
+    <ClInclude Include="include\take.h" />
+    <ClInclude Include="include\tuple.h" />
+    <ClInclude Include="include\zip.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\sequence.cpp" />
+    <ClCompile Include="tests\array.t.cpp" />
+    <ClCompile Include="tests\binop.t.cpp" />
+    <ClCompile Include="tests\cartesian.t.cpp" />
+    <ClCompile Include="tests\concatenate.t.cpp" />
+    <ClCompile Include="tests\counted.t.cpp" />
+    <ClCompile Include="tests\drop.t.cpp" />
+    <ClCompile Include="tests\factorial.t.cpp" />
+    <ClCompile Include="tests\filter.t.cpp" />
+    <ClCompile Include="tests\flatten.t.cpp" />
+    <ClCompile Include="tests\fmap.t.cpp" />
+    <ClCompile Include="tests\fold.t.cpp" />
+    <ClCompile Include="tests\merge.t.cpp" />
+    <ClCompile Include="tests\null.t.cpp" />
+    <ClCompile Include="tests\pointer.t.cpp" />
+    <ClCompile Include="tests\power.t.cpp" />
+    <ClCompile Include="tests\reverse.t.cpp" />
+    <ClCompile Include="tests\scan.t.cpp" />
+    <ClCompile Include="tests\sequence.t.cpp" />
+    <ClCompile Include="tests\singleton.t.cpp" />
+    <ClCompile Include="tests\zip.t.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
